@@ -1,53 +1,97 @@
 <!DOCTYPE html>
-<html ng-app="permissionsCalc">
+<html>
 	<head>
-		<title>Discord Permissions Calculator</title>
-
+		<title>FiniteReality&apos;s Random (and Sometimes Strange) Page</title>
 		<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+		<link rel="stylesheet" href="./css/main.css">
+		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<style>body{display:flex;min-height:100vh;flex-direction:column;}main{flex:1 0 auto;}.filled-in[type="checkbox"]:checked + label::after{border-color:#66bb6a !important;background-color:#66bb6a !important;}</style>
 	</head>
-	<body class="blue-grey darken-4 grey-text text-lighten-4">
-		<header>
-			<nav class="indigo lighten-2">
-				<div class="nav-wrapper container">
-					<a href="#" class="brand-logo">Discord Permissions Calculator</a>
-				</div>
-			</nav>
-		</header>
+	<body>
+		<div class="side-links fixed-action-btn">
+			<a class="btn-floating btn-large indigo lighten-1">
+				<i class="large material-icons">share</i>
+			</a>
+			<ul>
+				<li><a class="btn-floating tooltipped indigo lighten-3" href="https://github.com/FiniteReality" target="_blank" data-position="left" data-delay="500" data-tooltip="FiniteReality on GitHub"><img class="responsive-img" src="./img/GitHub-40px.svg" alt="github"/></a></li>
+				<li><a class="btn-floating tooltipped indigo lighten-2" href="http://www.roblox.com/users/1390724/profile" target="_blank" data-position="left" data-delay="500" data-tooltip="digpoe on ROBLOX"><img class="responsive-img" src="http://www.roblox.com/images/Logo/logo_R.svg" alt="ROBLOX"/></a></li>
+			</ul>
+		</div>
 		<main>
-			<section class="container" ng-controller="calc">
-				<div class="row">
-					<h3>Calculated permissions: {{calculatePermissions()}}</h3>
-					<code ng-bind-template="{{calculatePermissions()}} = {{calculateExplanation()}}">0 = 0x0</code>
-				</div>
-				<div class="row">
-					<div class="col s12 m6 l4" ng-repeat="permscope in permissions">
-						<h5 ng-bind-template="{{permscope.name}} Permissions">Unknown Permissions</h5>
-						<ul>
-							<li ng-repeat="perm in permscope.permissions">
-								<input type="checkbox" class="filled-in green" ng-model="perm.active" id="role_{{perm.id}}"/> <label for="role_{{perm.id}}" ng-bind="perm.name">Permission</label>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="page-footer indigo lighten-2">
 			<div class="container">
+				<section>
+					<div class="row">
+						<div class="col s12">
+							<h1>Weird and Wonderful Experiments</h1>
+							<p class="flow-text">
+								Welcome to the (probably) weird and (maybe) wonderful experiments I&rsquo;ve created, or participated in to some extent.<br/>
+								Hopefully you&rsquo;ll find these mildly interesting, but it doesn&rsquo;t really matter if you don&rsquo;t. All that really matters is that fun is had.
+							</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<div class="row">
+						<div class="col s12">
+							<h2>Projects I&rsquo;m Involved In</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s12 m6 l4">
+							<span class="small-text right"><a href="https://www.github.com/DigiTechs/Fetch" target="_blank">(GitHub)</a> <a href="http://fetch.gwiddle.co.uk/Home" target="_blank">(Direct Link)</a></span>
+							<h3>Fetch</h3>
+							<p>
+								I&rsquo;m currently working on a project called Fetch; a website, like <a href="https://scratch.mit.edu/">Scratch</a>, but for Scratch mods.
+							</p>
+							<p>
+								It arose out of the (apparent) disappearance of a site called &rsquo;Mod Share&rsquo;, which provides a service similar what I am trying to create.
+								However, it appears that Mod Share is no longer being maintained, and people have called for a &quot;reboot&quot; to the site. This
+								is what Fetch is for.
+							</p>
+						</div>
+						<div class="col s12 m6 l4">
+							<span class="small-text right"></span>
+							<h3>RBXDatabase</h3>
+							<p>
+								RBXDatabase is a project on a semi-hiatus right now.
+							</p>
+							<p>
+								This is a data storage solution for the online game/development platform <a href="http://www.roblox.com/">ROBLOX</a>, as
+								built-in features are lacking and developers would like more flexibility. RBXDatabase provides developers with advanced
+								data storage features to allow developers to store all the data they will ever need.
+							</p>
+						</div>
+						<div class="col s12 m6 l4">
+							<span class="small-text right"></span>
+							<h3>Plastic Dimensions</h3>
+							<p>
+								Plastic Dimensions is something I&rsquo;ve been working on for a while now.
+							</p>
+							<p>
+								It&rsquo;s a game engine, similar to that of <a href="http://www.roblox.com/">ROBLOX</a>, but built with a different vision:
+								to be an easy-to-use development environment, where the developers call the shots. We have a Lua-integrated engine so
+								entry-level developers can still create fun, exciting games for everyone to play.
+							</p>
+						</div>
+					</div>
+				</section>
 			</div>
-			<div class="footer-copyright">
-				<div class="container">
-					&copy; 2016+ FiniteReality - This tool is not official.
+		</main>
+		<footer>
+			<div class="container">
+				<hr>
+				<div class="left">
+					&copy; 2016+ FiniteReality - Previously DigiTechs
+				</div>
+				<div class="right copyright-info">
+					<div id="roblox-copyright" class="grey-text small-text">
+						ROBLOX logo &copy; 2016 ROBLOX, Inc. All Rights Reserved. Used With Permission
+					</div>
 				</div>
 			</div>
 		</footer>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-		<!-- apparently I should use react instead of angular? hell no, react is ugly. -->
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<script type="text/javascript" src="assets/js/permissions.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 	</body>
 </html>
