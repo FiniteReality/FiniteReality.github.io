@@ -1,0 +1,24 @@
+/* hr for 'borders' */
+hr {
+	border: none;
+	border-top: 1px solid rgba(160,160,160, 0.2);
+}
+
+/* makes text smaller than the default font size */
+.small-text {
+	font-size: 80%;
+}
+
+/* applied to anchor elements which do not go anywhere */
+a.no-link {
+	color: rgba(0,0,0,0.87); /* Default text colour in Materialize-css */
+}
+
+footer .copyright-info {
+	display: inline;
+}
+
+/* Special formatting for SVGs */
+.side-links>ul>li>a>img.responsive-img {
+	padding: 6px;
+}
