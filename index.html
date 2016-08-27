@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="permissionsCalc">
+	<head>
+		<title>Discord Permissions Calculator</title>
+
+		<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<style>body{display:flex;min-height:100vh;flex-direction:column;}main{flex:1 0 auto;}.filled-in[type="checkbox"]:checked + label::after{border-color:#66bb6a !important;background-color:#66bb6a !important;}</style>
+	</head>
+	<body class="blue-grey darken-4 grey-text text-lighten-4">
+		<header>
+			<nav class="indigo lighten-2">
+				<div class="nav-wrapper container">
+					<a href="#" class="brand-logo">Discord Permissions Calculator</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section class="container" ng-controller="calc">
+				<div class="row">
+					<h3>Calculated permissions: {{calculatePermissions()}}</h3>
+					<code ng-bind-template="{{calculatePermissions()}} = {{calculateExplanation()}}">0 = 0x0</code>
+				</div>
+				<div class="row">
+					<div class="col s12 m6 l4" ng-repeat="permscope in permissions">
+						<h5 ng-bind-template="{{permscope.name}} Permissions">Unknown Permissions</h5>
+						<ul>
+							<li ng-repeat="perm in permscope.permissions">
+								<input type="checkbox" class="filled-in green" ng-model="perm.active" id="role_{{perm.id}}"/> <label for="role_{{perm.id}}" ng-bind="perm.name">Permission</label>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="page-footer indigo lighten-2">
+			<div class="container">
+			</div>
+			<div class="footer-copyright">
+				<div class="container">
+					&copy; 2016+ FiniteReality - This tool is not official.
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		<!-- apparently I should use react instead of angular? hell no, react is ugly. -->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script type="text/javascript" src="assets/js/permissions.js"></script>
+	</body>
+</html>
