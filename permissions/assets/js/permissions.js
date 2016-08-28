@@ -68,7 +68,7 @@ angular.module('permissionsCalc', [])
 					{active: false, id: "administrator",    name: "Administrator",         value: 0x8,        auto: false},
 					{active: false, id: "manage_roles",     name: "Manage roles",          value: 0x10000000, auto: false},
 					{active: false, id: "kick_members",     name: "Kick members",          value: 0x2,        auto: false},
-					{active: false, id: "instant_invite",   name: "Create Instant Invite", value: 0x1,        auto: true },
+					{active: false, id: "instant_invite",   name: "Create Instant Invite", value: 0x1,        auto: false},
 					{active: false, id: "manage_nicknames", name: "Manage Nicknames",      value: 0x8000000,  auto: false},
 					{active: false, id: "manage_server",    name: "Manage Server",         value: 0x20,       auto: false},
 					{active: false, id: "manage_channels",  name: "Manage Channels",       value: 0x10,       auto: false},

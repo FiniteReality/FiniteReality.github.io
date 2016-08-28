@@ -30,7 +30,7 @@
 						<input type="checkbox" class="filled-in" ng-model="permscope.active" ng-change="toggle(permscope)" id="auto_{{permscope.name}}"/> <label for="auto_{{permscope.name}}">Select Recommended</label>
 						<ul>
 							<li ng-repeat="perm in permscope.permissions">
-								<input type="checkbox" class="filled-in" ng-model="perm.active" ng-change="disableActive(permscope)" id="role_{{perm.id}}"/> <label for="role_{{perm.id}}" ng-bind="perm.name" ng-class="{'amber-text': !perm.auto}">Permission</label>
+								<input type="checkbox" class="filled-in" ng-model="perm.active" ng-change="disableActive(permscope)" id="role_{{perm.id}}"/> <label for="role_{{perm.id}}" ng-bind="perm.name" ng-class="{'amber-text': !perm.auto, 'text-darken-4': !perm.auto}">Permission</label>
 							</li>
 						</ul>
 					</div>
