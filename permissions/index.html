@@ -27,9 +27,10 @@
 				<div class="row">
 					<div class="col s12 m6 l4" ng-repeat="permscope in permissions">
 						<h5 ng-bind-template="{{permscope.name}} Permissions">Unknown Permissions</h5>
+						<input type="checkbox" class="filled-in" ng-model="permscope.active" ng-change="toggle(permscope)" id="auto_{{permscope.name}}"/> <label for="auto_{{permscope.name}}">Select Recommended</label>
 						<ul>
 							<li ng-repeat="perm in permscope.permissions">
-								<input type="checkbox" class="filled-in green" ng-model="perm.active" id="role_{{perm.id}}"/> <label for="role_{{perm.id}}" ng-bind="perm.name">Permission</label>
+								<input type="checkbox" class="filled-in" ng-model="perm.active" ng-change="disableActive(permscope)" id="role_{{perm.id}}"/> <label for="role_{{perm.id}}" ng-bind="perm.name">Permission</label>
 							</li>
 						</ul>
 					</div>
