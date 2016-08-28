@@ -10,11 +10,3 @@ main{
 	border-color:#66bb6a !important;
 	background-color:#66bb6a !important;
 }
-input[type=number]{
-	-moz-appearance: textfield;
-}
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-	-webkit-appearance: none;
-	margin: 0;
-}
