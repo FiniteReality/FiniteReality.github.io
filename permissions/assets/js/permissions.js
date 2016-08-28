@@ -4,7 +4,9 @@
 // also: behold the field where my fucks are grown, and thy shall see that it is barren.
 
 angular.module('permissionsCalc', [])
-	.controller('calc', ['$scope', function($scope) {
+	.controller('calc', ['$scope', '$location', function($scope, $location) {
+		let perms = parseInt($location.hash());
+
 		$scope.calculatePermissions = function()
 		{
 			let value = 0;
@@ -20,6 +22,7 @@ angular.module('permissionsCalc', [])
 					}
 				}
 			}
+			$location.hash(value);
 			return value;
 		}
 		$scope.calculateExplanation = function()
@@ -40,6 +43,7 @@ angular.module('permissionsCalc', [])
 			if (resultSects.length == 0) { resultSects.push("0x0"); }
 			return resultSects.join(" | ");
 		}
+
 		$scope.permissions = [
 			{
 				name: "General",
@@ -81,4 +85,17 @@ angular.module('permissionsCalc', [])
 				]
 			}
 		];
+
+		if (!isNaN(perms))
+		{
+			for (let sectionId in $scope.permissions)
+			{
+				let section = $scope.permissions[sectionId];
+				for (let permissionId in section.permissions)
+				{
+					let permission = section.permissions[permissionId];
+					permission.active = (perms & permission.value) != 0;
+				}
+			}
+		}
 	}]);
