@@ -5,9 +5,9 @@
 
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+		<link rel="stylesheet" href="assets/css/main.css">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<style>body{display:flex;min-height:100vh;flex-direction:column;}main{flex:1 0 auto;}.filled-in[type="checkbox"]:checked + label::after{border-color:#66bb6a !important;background-color:#66bb6a !important;}</style>
 	</head>
 	<body class="blue-grey darken-4 grey-text text-lighten-4">
 		<header>
@@ -31,6 +31,20 @@
 								<input type="checkbox" class="filled-in green" ng-model="perm.active" id="role_{{perm.id}}"/> <label for="role_{{perm.id}}" ng-bind="perm.name">Permission</label>
 							</li>
 						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<h4>Invite a bot</h4>
+					<div class="input-field col s12 m6 l3">
+						<input placeholder="1234567890" type="number" id="bot_id" class="validate" ng-model="botId"/>
+						<label for="bot_id" data-error="You must input a valid bot ID">Bot ID</label>
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<div class="col s12">
+						Generated link: <a ng-href="https://discordapp.com/oauth2/authorize?permissions={{calculatePermissions()}}&scope=bot&client_id={{botId}}" ng-bind-template="https://discordapp.com/oauth2/authorize?permissions={{calculatePermissions()}}&scope=bot&client_id={{botId}}"></a>
 					</div>
 				</div>
 			</section>

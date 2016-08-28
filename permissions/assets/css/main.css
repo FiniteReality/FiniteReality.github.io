@@ -1,0 +1,20 @@
+body{
+	display:flex;
+	min-height:100vh;
+	flex-direction:column;
+}
+main{
+	flex:1 0 auto;
+}
+.filled-in[type="checkbox"]:checked + label::after{
+	border-color:#66bb6a !important;
+	background-color:#66bb6a !important;
+}
+input[type=number]{
+	-moz-appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
