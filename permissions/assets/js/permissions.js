@@ -4,6 +4,9 @@
 // also: behold the field where my fucks are grown, and thy shall see that it is barren.
 
 angular.module('permissionsCalc', [])
+	.config(['$locationProvider', function($locationProvider){
+		$locationProvider.html5Mode(true);
+	}])
 	.controller('calc', ['$scope', '$location', function($scope, $location) {
 		let perms = parseInt($location.hash());
 
