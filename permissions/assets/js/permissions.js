@@ -8,7 +8,7 @@ angular.module('permissionsCalc', [])
 		$locationProvider.html5Mode(true);
 	}])
 	.controller('calc', ['$scope', '$location', function($scope, $location) {
-		let perms = parseInt($location.hash());
+		let perms = parseInt($location.search().v);
 
 		$scope.calculatePermissions = function()
 		{
@@ -25,7 +25,7 @@ angular.module('permissionsCalc', [])
 					}
 				}
 			}
-			$location.hash(value);
+			$location.search('v', value);
 			return value;
 		}
 		$scope.calculateExplanation = function()
