@@ -71,8 +71,8 @@ angular.module('permissionsCalc', [])
 					{active: false, id: "administrator",    name: "Administrator",         value: 0x8,        auto: false},
 					{active: false, id: "manage_roles",     name: "Manage roles",          value: 0x10000000, auto: false},
 					{active: false, id: "kick_members",     name: "Kick members",          value: 0x2,        auto: false},
-					{active: false, id: "instant_invite",   name: "Create Instant Invite", value: 0x1,        auto: false},
-					{active: false, id: "manage_nicknames", name: "Manage Nicknames",      value: 0x8000000,  auto: false},
+					{active: false, id: "instant_invite",   name: "Create Instant Invite", value: 0x1,        auto: true},
+					{active: false, id: "manage_nicknames", name: "Manage Nicknames",      value: 0x8000000,  auto: true},
 					{active: false, id: "manage_server",    name: "Manage Server",         value: 0x20,       auto: false},
 					{active: false, id: "manage_channels",  name: "Manage Channels",       value: 0x10,       auto: false},
 					{active: false, id: "ban_members",      name: "Ban Members",           value: 0x4,        auto: false},
@@ -84,14 +84,14 @@ angular.module('permissionsCalc', [])
 				active: false,
 				permissions: [
 					{active: false, id: "read_messages",        name: "Read Messages",        value: 0x400,   auto: true },
-					{active: false, id: "send_tts_messages",    name: "Send TTS Messages",    value: 0x1000,  auto: false},
+					{active: false, id: "send_tts_messages",    name: "Send TTS Messages",    value: 0x1000,  auto: true },
 					{active: false, id: "embed_links",          name: "Embed links",          value: 0x4000,  auto: true },
 					{active: false, id: "read_message_history", name: "Read Message History", value: 0x10000, auto: true },
 					{active: false, id: "use_external_emojis",  name: "Use External Emojis",  value: 0x40000, auto: true },
 					{active: false, id: "send_messages",        name: "Send Messages",        value: 0x800,   auto: true },
 					{active: false, id: "manage_messaes",       name: "Manage Messages",      value: 0x2000,  auto: false},
 					{active: false, id: "attach_files",         name: "Attach files",         value: 0x8000,  auto: true },
-					{active: false, id: "mention_everyone",     name: "Mention Everyone",     value: 0x20000, auto: false}
+					{active: false, id: "mention_everyone",     name: "Mention Everyone",     value: 0x20000, auto: true }
 				]
 			},
 			{
@@ -99,10 +99,10 @@ angular.module('permissionsCalc', [])
 				active: false,
 				permissions: [
 					{active: false, id: "connect",            name: "Connect",            value: 0x100000,  auto: true },
-					{active: false, id: "mute_members",       name: "Mute Members",       value: 0x400000,  auto: false},
-					{active: false, id: "move_members",       name: "Move Members",       value: 0x1000000, auto: false},
+					{active: false, id: "mute_members",       name: "Mute Members",       value: 0x400000,  auto: true },
+					{active: false, id: "move_members",       name: "Move Members",       value: 0x1000000, auto: true },
 					{active: false, id: "speak",              name: "Speak",              value: 0x200000,  auto: true },
-					{active: false, id: "deafen_members",     name: "Deafen Members",     value: 0x800000,  auto: false},
+					{active: false, id: "deafen_members",     name: "Deafen Members",     value: 0x800000,  auto: true },
 					{active: false, id: "use_voice_activity", name: "Use Voice Activity", value: 0x2000000, auto: true }
 				]
 			}
