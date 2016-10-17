@@ -77,7 +77,8 @@ angular.module('permissionsCalc', [])
 					{active: false, id: "manage_channels",  name: "Manage Channels",       value: 0x10,       auto: false},
 					{active: false, id: "ban_members",      name: "Ban Members",           value: 0x4,        auto: false},
 					{active: false, id: "change_nickname",  name: "Change Nickname",       value: 0x4000000,  auto: true },
-					{active: false, id: "manage_webhooks",  name: "Manage Webhooks",       value: 0x20000000, auto: false}
+					{active: false, id: "manage_webhooks",  name: "Manage Webhooks",       value: 0x20000000, auto: false},
+					{active: false, id: "manage_emojis",  name: "Manage Emojis",           value: 0x40000000, auto: true }
 				]
 			},
 			{
