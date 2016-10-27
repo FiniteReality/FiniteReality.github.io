@@ -69,8 +69,8 @@ angular.module('permissionsCalc', [])
 				active: false,
 				permissions: [
 					{active: false, id: "administrator",    name: "Administrator",         value: 0x8,        auto: false},
-					{active: false, id: "manage_roles",     name: "Manage roles",          value: 0x10000000, auto: false},
-					{active: false, id: "kick_members",     name: "Kick members",          value: 0x2,        auto: false},
+					{active: false, id: "manage_roles",     name: "Manage Roles",          value: 0x10000000, auto: false},
+					{active: false, id: "kick_members",     name: "Kick Members",          value: 0x2,        auto: false},
 					{active: false, id: "instant_invite",   name: "Create Instant Invite", value: 0x1,        auto: true },
 					{active: false, id: "manage_nicknames", name: "Manage Nicknames",      value: 0x8000000,  auto: true },
 					{active: false, id: "manage_server",    name: "Manage Server",         value: 0x20,       auto: false},
@@ -87,13 +87,14 @@ angular.module('permissionsCalc', [])
 				permissions: [
 					{active: false, id: "read_messages",        name: "Read Messages",        value: 0x400,   auto: true },
 					{active: false, id: "send_tts_messages",    name: "Send TTS Messages",    value: 0x1000,  auto: true },
-					{active: false, id: "embed_links",          name: "Embed links",          value: 0x4000,  auto: true },
+					{active: false, id: "embed_links",          name: "Embed Links",          value: 0x4000,  auto: true },
 					{active: false, id: "read_message_history", name: "Read Message History", value: 0x10000, auto: true },
 					{active: false, id: "use_external_emojis",  name: "Use External Emojis",  value: 0x40000, auto: true },
 					{active: false, id: "send_messages",        name: "Send Messages",        value: 0x800,   auto: true },
 					{active: false, id: "manage_messaes",       name: "Manage Messages",      value: 0x2000,  auto: false},
-					{active: false, id: "attach_files",         name: "Attach files",         value: 0x8000,  auto: true },
-					{active: false, id: "mention_everyone",     name: "Mention Everyone",     value: 0x20000, auto: true }
+					{active: false, id: "attach_files",         name: "Attach Files",         value: 0x8000,  auto: true },
+					{active: false, id: "mention_everyone",     name: "Mention Everyone",     value: 0x20000, auto: true },
+					{active: false, id: "add_reactions",        name: "Add Reactions",        value: 0x40,    auto: true }
 				]
 			},
 			{
