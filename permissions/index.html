@@ -45,18 +45,44 @@
 						</p>
 					</div>
 				</div>
-				<div class="row">
-					<h4>Invite a bot</h4>
-					<div class="input-field col s12 m6 l3">
-						<input placeholder="1234567890" type="text" id="bot_id" pattern="[0-9]+" class="validate" ng-model="botId" ng-trim="false" required/>
-						<label for="bot_id" data-error="You must input a valid bot ID">Client ID</label>
+				<div>
+					<div class="row">
+						<h4>Invite a bot</h4>
+						<div class="col s12 m4 l3">
+							<div class="row">
+								<div class="col">
+									<input type="checkbox" class="filled-in" ng-model="bot.hasScope" id="has_scope"/> <label for="has_scope">Requires Scopes</label>
+								</div>
+								<div class="col">
+									<input type="checkbox" class="filled-in" ng-model="bot.hasCode" id="has_code"/> <label for="has_code">Requires Code</label>
+								</div>
+							</div>
+							<div class="row" ng-show="bot.hasScope">
+								<div class="input-field col s12">
+									<input placeholder="bot,identify" type="text" id="bot_scope" pattern="(?:[\w.]+,?)+" class="validate" ng-model="bot.scope" ng-trim="false" required/>
+									<label for="bot_scope" data-error="You must input a comma-separated list of scopes">Scopes</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-field col s12">
+									<input placeholder="1234567890" type="text" id="bot_id" pattern="[0-9]+" class="validate" ng-model="bot.id" ng-trim="false" required/>
+									<label for="bot_id" data-error="You must input a valid bot ID">Client ID</label>
+								</div>
+							</div>
+						</div>
 					</div>
-					<br/>
-					<br/>
-					<br/>
-					<br/>
-					<div class="col s12">
-						Generated link: <a ng-href="https://discordapp.com/oauth2/authorize?permissions={{calculatePermissions()}}&scope=bot&client_id={{botId}}" ng-bind-template="https://discordapp.com/oauth2/authorize?permissions={{calculatePermissions()}}&scope=bot&client_id={{botId}}"></a>
+					</div>
+						<div class="col">
+							<div class="row">
+								<div class="col">
+									<a class="waves-effec waves-light btn-large indigo lighten-2" ng-href="{{generateInvite('discord', bot, calculatePermissions())}}">Add bot</a>
+								</div>
+								<div class="col">
+									<!-- JS has terrible clipboard support. -->
+									<a class="waves-effect waves-light btn-large indigo lighten-2 tooltipped" ng-href="{{generateInvite('embed', bot, calculatePermissions())}}" data-tooltip="Right-click to copy">Embed Link</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</section>
