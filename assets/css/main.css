@@ -22,3 +22,13 @@ footer .copyright-info {
 .side-links>ul>li>a>img.responsive-img {
 	padding: 6px;
 }
+
+.projects-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.projects-list .col {
+    margin-left: initial !important;
+}
